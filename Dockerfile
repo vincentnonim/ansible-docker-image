@@ -1,8 +1,9 @@
-FROM python:3.12-alpine
+FROM python:3.12-bookworm
 
 COPY ansible-requirements.yml python-requirements.txt .
 
-RUN apk add git openssh-client && \
+RUN apt-get update && apt-get install -y git openssh-client && \
+    apt clean && \
     pip install -r python-requirements.txt && \
     ansible-galaxy install -r ansible-requirements.yml
 
