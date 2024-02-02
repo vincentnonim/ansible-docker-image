@@ -1,0 +1,9 @@
+---
+collections:
+  - name: community.docker
+    version: ">=3.4.11"
+    source: https://galaxy.ansible.com
+
+# roles:
+#   - name: bla
+#     version: "1.9.6"
